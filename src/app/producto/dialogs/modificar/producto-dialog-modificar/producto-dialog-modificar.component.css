@@ -1,0 +1,65 @@
+.mat-dialog-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.mat-form-field {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+#input-precio, #input-cantidad {
+    width: 100px;
+}
+
+#input-descripcion {
+    width: 300px;
+}
+
+.mat-dialog-actions {
+    float: right;
+}
+
+.img-producto {
+    width: 160px;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.img-producto > img {
+    width: 100%;
+}
+
+.input-subir-imagen {
+    letter-spacing: 0.5px;
+    color: #333;
+    vertical-align: top;
+    padding: 5px 10px;
+    font-weight: normal;
+}
+
+.input-subir-imagen .mat-icon{
+    vertical-align: middle;
+    margin-right: 5px;
+    color: #999;
+}
+
+#file-input {
+    display: none;
+}
+
+label {
+    font-size: 11px;
+}
+
+.mat-checkbox {
+    font-size: 11px;
+}
+
+#div-inputs {
+    display: flex;
+    flex-direction: column;
+}
+

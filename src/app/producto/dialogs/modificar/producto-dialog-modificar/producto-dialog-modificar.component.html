@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Modificar Producto</h2>
+<div style="height: 10px;">
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+</div>
+<mat-dialog-content>
+    <div class="img-producto">
+        <img *ngIf="productoModificar?.imagen" src="http://localhost:8080/productos/imagen/{{productoModificar.imagen}}"
+            alt="">
+        <img *ngIf="!productoModificar?.imagen" src="http://localhost:8080/images/no-image-available.png" alt="">
+    </div>
+    <div id="div-inputs">
+        <div>
+            <mat-form-field appearance="fill" id="input-descripcion">
+                <mat-label>Descripción</mat-label>
+                <input matInput [(ngModel)]="productoModificar.descripcion">
+            </mat-form-field>
+            <mat-form-field appearance="fill" id="input-precio">
+                <mat-label>Precio</mat-label>
+                <input matInput [(ngModel)]="productoModificar.precio">
+            </mat-form-field>
+            <mat-form-field appearance="fill" id="input-cantidad">
+                <mat-label>Cantidad</mat-label>
+                <input matInput [(ngModel)]="productoModificar.cantidad">
+            </mat-form-field>
+        </div>
+        <div id="div-select-subir">
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccione una categoría</mat-label>
+                <mat-select [(value)]="categoriaSeleccionada">
+                    <mat-option>Ninguno</mat-option>
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                        {{categoria.descripcion}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input class="ng-hide" (change)="seleccionarImagen($event)" type="file" id="file-input">
+            <label for="file-input" class="input-subir-imagen mat-stroked-button">
+                <mat-icon>image</mat-icon><span *ngIf="productoModificar?.imagen">{{imagenProductoNombre || "Cambiar Imagen"}}</span><span
+                    *ngIf="!productoModificar?.imagen">{{imagenProductoNombre || "Seleccionar Imagen"}}</span>
+            </label>
+        </div>
+        <mat-checkbox id="check-habilitado" [(ngModel)]="productoModificar.estado">HABILITADO</mat-checkbox>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="modificar()">Aceptar</button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+</mat-dialog-actions>

@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Agregar Producto</h2>
+<div style="height: 10px;">
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="grupoAgregar">
+    <mat-dialog-content>
+
+        <div id="first-inputs">
+            <div id="input-descripcion">
+                <mat-form-field appearance="fill">
+                    <mat-label>Descripción</mat-label>
+                    <input matInput formControlName="descripcion" >
+                </mat-form-field>
+
+                <div *ngIf="grupoAgregar.get('descripcion').errors && grupoAgregar.get('descripcion').dirty" class="invalid-feedback">
+                    <div *ngIf="grupoAgregar.get('descripcion').hasError('required')">La DESCRIPCIÓN es obligatoria</div>
+                </div>
+            </div>
+            <div id="input-precio">
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio</mat-label>
+                    <input matInput formControlName="precio">
+                </mat-form-field>
+            </div>
+           
+        </div>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button type="submit">Aceptar</button>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+    </mat-dialog-actions>
+</form>

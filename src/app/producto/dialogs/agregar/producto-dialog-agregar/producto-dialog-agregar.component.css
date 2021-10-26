@@ -1,0 +1,66 @@
+.mat-dialog-content {
+    flex-flow: column wrap;
+    height: 160px;
+}
+
+#first-inputs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.mat-form-field {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+#input-precio, #input-cantidad {
+    flex-basis: 10%;
+}
+
+#input-precio > .mat-form-field, #input-cantidad > .mat-form-field {
+    width:80px;
+}
+
+#input-descripcion {
+    flex-basis: 50%;
+    /*width: 300px;*/
+}
+
+#input-descripcion > .mat-form-field {
+    width: 300px;
+}
+
+.mat-dialog-actions {
+    float: right;
+}
+
+#file-input {
+    display: none;
+}
+
+label {
+    font-size: 11px;
+}
+
+.input-subir-imagen {
+    letter-spacing: 0.5px;
+    color: #333;
+    vertical-align: top;
+    padding: 5px 10px;
+    font-weight: normal;
+}
+
+.input-subir-imagen .mat-icon{
+    vertical-align: middle;
+    margin-right: 5px;
+    color: #999;
+}
+
+
+.mat-checkbox {
+    font-size: 11px;
+}
+
+
+

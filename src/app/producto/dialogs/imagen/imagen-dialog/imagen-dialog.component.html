@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Cambiar imagen</h2>
+<div style="height: 10px;">
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+</div>
+<mat-dialog-content>
+    <img *ngIf="url" [src]="url" class="rounded mb-3" width="180">
+    <input class="ng-hide" (change)="seleccionarImagen($event)" type="file" id="file-input" >
+    <label for="file-input" class="mat-stroked-button">{{fotoSeleccionadaNombre || "Seleccionar Imagen"}}</label>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="subirImagen()">
+        <mat-icon>attach_file</mat-icon> Aceptar
+    </button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+</mat-dialog-actions>

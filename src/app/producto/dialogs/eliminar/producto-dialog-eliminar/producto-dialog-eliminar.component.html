@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Eliminar Producto</h2>
+<div style="height: 10px;">
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+</div>
+<mat-dialog-content>
+    <p>Esta seguro de eliminar el producto <mark>{{ data.producto.descripcion }}</mark>?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="eliminar()">Aceptar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
